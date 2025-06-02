@@ -21,13 +21,13 @@ Gerçek zamanlı deprem verilerini ve fay hatlarını gösteren interaktif harit
 - Backend:
   - .NET Core
   - MongoDB
-  - RESTful API
+ 
 
 ## Kurulum
 
 1. Projeyi klonlayın:
 ```bash
-git clone [proje-url]
+git clone [https://github.com/fatihburakk/Turkiye-Deprem-Aktivite-Haritasi]
 ```
 
 2. Backend bağımlılıklarını yükleyin:
@@ -68,19 +68,3 @@ npm start
    - Şehir bazlı filtreleme
    - Filtreleri sıfırlama
 
-## Katkıda Bulunma
-
-1. Bu depoyu fork edin
-2. Yeni bir branch oluşturun (`git checkout -b feature/yeniOzellik`)
-3. Değişikliklerinizi commit edin (`git commit -am 'Yeni özellik: Açıklama'`)
-4. Branch'inizi push edin (`git push origin feature/yeniOzellik`)
-5. Pull Request oluşturun
-
-## Lisans
-
-Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
-
-## İletişim
-
-Proje Sahibi: [İsminiz]
-E-posta: [E-posta adresiniz] 
