@@ -1,0 +1,16 @@
+{
+  "name": "deprem-aktivite-haritasi",
+  "version": "1.0.0",
+  "description": "Deprem Aktivite Haritası Projesi",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },np
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 

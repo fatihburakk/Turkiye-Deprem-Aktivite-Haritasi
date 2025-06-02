@@ -1,0 +1,614 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    79deg,
+    rgb(238, 238, 238),
+    rgb(255, 255, 255)
+  );
+  z-index: 999;
+  box-shadow: 0px 0px 10px rgba(35, 117, 224, 0.5);
+}
+
+header .logo {
+  font-weight: bolder;
+  font-size: 25px;
+  color: rgb(15, 116, 199);
+}
+
+.companyBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 400px;
+  height: 80px;
+  padding: 10px;
+}
+
+#depremLogo {
+  width: 70px;
+  height: 100%;
+  padding: 2px;
+}
+
+#depremLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+header .navbar ul {
+  list-style: none;
+}
+
+header .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+header .navbar ul li a {
+  font-size: 20px;
+  padding: 23px 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  transition: 0.5s color ease;
+  position: relative;
+  font-weight: 400;
+}
+
+.material-symbols-outlined {
+  margin-left: 5px;
+}
+
+header .navbar ul li a:hover {
+  transition: 0.4s;
+  color: rgba(44, 129, 204, 0.984);
+}
+
+header .navbar ul li a:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(3, 134, 234, 0.459);
+  height: 4px;
+  width: 0%;
+  border-radius: 10px;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+header .navbar ul li a:hover:after {
+  width: 98%;
+}
+
+header .navbar ul li ul {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 230px;
+  background-color: rgba(220, 220, 220, 0.173);
+  backdrop-filter: blur(5px);
+  box-shadow: 0px 0px 10px rgba(35, 117, 224, 0.5);
+  border-radius: 10px 10px 10px 10px;
+  z-index: -4;
+}
+
+header .navbar ul li ul li ul {
+  left: 240px;
+  top: 0;
+}
+
+header .navbar ul li ul li {
+  width: 100%;
+
+  padding: 10px auto;
+}
+
+#menu-bar {
+  display: none;
+}
+
+header label {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  display: none;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+#map {
+  height: 600px;
+  width: 100%;
+}
+/* Üstte sabit kalacak bar için stil */
+.header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+.header div {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.low {
+  background-color: yellow;
+  color: black;
+}
+.medium {
+  background-color: orange;
+}
+.high {
+  background-color: red;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* düşük/orta/yüksek ikon animasyonu */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+    -webkit-transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    -webkit-transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Spin animasyonu */
+.spin-effect {
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Bounce animasyonu */
+.bounce-effect {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/*------------------------------------------------------------------------------------------------------------------*/
+
+/* Kontrol Butonları Container */
+.control-buttons {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+
+
+/* Filtreleme Butonu */
+.filter-button {
+  transform: translateY(-50%);
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.filter-button:hover {
+  background-color: #2980b9;
+}
+
+/* Filtreleme Paneli */
+.filter-panel {
+  position: fixed;
+  left: -250px; /* Başlangıçta gizli */
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Panel Açıldığında */
+.filter-panel.open {
+  left: 0;
+}
+
+/* Harita Panel Açıldığında */
+#map.panel-open {
+  margin-left: 250px;
+}
+
+/* İçerik düzeni */
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiketler ve input/ select elemanları arasındaki hizalama */
+.filter-content label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Select kutusu ve input alanı düzeni */
+.filter-content select,
+.filter-content input {
+  padding: 8px;
+  font-size: 14px;
+  width: 100%; /* Form öğelerinin tüm panel genişliğini kaplamasını sağlar */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Filtrele butonu */
+#filter-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#filter-button:hover {
+  background-color: #0056b3;
+}
+
+/* Kapatma butonunun stili */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Sıfırla Butonu */
+#reset-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#reset-button:hover {
+  background-color: #c0392b;
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-1px, -2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(2px, 1px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s; /* Animasyon süresi */
+  animation-iteration-count: 1; /* Bir kez tekrarla */
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+/*nokta animasyonu */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.earthquake-point {
+  animation: pulse 2s infinite;
+  border-radius: 50%;
+  width: 20px; /* Noktanın genişliği */
+  height: 20px; /* Noktanın yüksekliği */
+  position: absolute;
+  background-color: red; /* Noktanın rengi */
+  transform: translate(-50%, -50%);
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  margin-top: 100px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  min-width: 300px;
+}
+
+.earthquake-list {
+  margin: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.earthquake-list h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.earthquake-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.earthquake-item:hover {
+  background-color: #f5f5f5;
+}
+
+.magnitude-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.magnitude-high {
+  background-color: #ff4444;
+}
+
+.magnitude-medium {
+  background-color: #ffa500;
+}
+
+.magnitude-low {
+  background-color: #ffeb3b;
+}
+
+/* İletişim formu stilleri */
+.contact-container {
+  max-width: 800px;
+  margin: 120px auto 40px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+.team-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.team-member {
+  text-align: center;
+  margin: 20px;
+  flex-basis: 250px;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+.team-member p {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.about {
+  background: url("../image/resim1.jpg") no-repeat left;
+  background-size: 55%;
+  background-color: #fdfdfd;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.inner-section {
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 140px;
+  box-shadow: 13px 12px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inner-section h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 13px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.skills img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .inner-section {
+    padding: 80px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+  .inner-section {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    padding: 0;
+  }
+  .inner-section {
+    padding: 60px;
+  }
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills img {
+    margin: 10px;
+  }
+}

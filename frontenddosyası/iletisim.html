@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İletişim</title>
+    <link rel="stylesheet" href="csskodlari/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="companyBar">
+        <a href="#" class="logo">Deprem Aktivite Haritası</a>
+        <div id="depremLogo">
+          <img src="image/resim2.jpg" alt="" />
+        </div>
+      </div>
+
+      <input type="checkbox" id="menu-bar" />
+      <label for="menu-bar"
+        ><span id="menuicon" class="material-symbols-outlined"
+          >menu</span
+        ></label
+      >
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="deprem_listesi.html">Deprem Listesi</a></li>
+          <li><a href="aboutMe.html">Hakkımızda</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="contact-container">
+      <h2>Bizimle İletişime Geçin</h2>
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-group">
+          <label for="name">Ad Soyad</label>
+          <input type="text" id="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-posta</label>
+          <input type="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Konu</label>
+          <input type="text" id="subject" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mesajınız</label>
+          <textarea id="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Gönder</button>
+      </form>
+    </div>
+  </body>
+</html>

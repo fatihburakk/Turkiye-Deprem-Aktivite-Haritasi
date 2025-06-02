@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deprem Listesi</title>
+    <link rel="stylesheet" href="csskodlari/style.css" />
+    <!-- Chart.js kütüphanesini ekleyelim -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="companyBar">
+        <a href="#" class="logo">Deprem Aktivite Haritası</a>
+        <div id="depremLogo">
+          <img src="image/resim2.jpg" alt="" />
+        </div>
+      </div>
+
+      <input type="checkbox" id="menu-bar" />
+      <label for="menu-bar"
+        ><span id="menuicon" class="material-symbols-outlined"
+          >menu</span
+        ></label
+      >
+
+      <nav class="navbar">
+        <ul>
+          <li><a href="index.html">Anasayfa</a></li>
+          <li><a href="deprem_listesi.html">Deprem Listesi</a></li>
+          <li><a href="aboutMe.html">Hakkımızda</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="statistics-container">
+      <div class="chart-container">
+        <canvas id="magnitudeChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <div class="earthquake-list">
+      <h2>Son Depremler</h2>
+      <div id="earthquakeData"></div>
+    </div>
+
+    <script src="jskodlari/deprem_listesi.js"></script>
+  </body>
+</html>
