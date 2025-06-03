@@ -1,6 +1,6 @@
 # Türkiye Deprem Aktivite Haritası
 
-Gerçek zamanlı deprem verilerini ve fay hatlarını gösteren interaktif harita uygulaması.
+2024 yılında yapmış olduğum gerçek zamanlı deprem verilerini ve fay hatlarını gösteren interaktif harita uygulaması.
 
 ## Özellikler
 
